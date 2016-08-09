@@ -12,27 +12,25 @@ ControlledModal.jsx, Modal.jsx, EnclosedModal.jsx,  and	main.css
 
 and run these in your project folder:
 
-meteor add react-meteor-data
-
+```meteor add react-meteor-data
 meteor npm install react-addons-pure-render-mixin
-
 meteor npm install react-addons-css-transition-group
-
 meteor npm install --save classnames
-
+```
 
 On the page that you wish to use the modals include:
-
+```
 import EnclosedModal  from 'PATH-TO-WHERE-YOU-SAVE-IT/EnclosedModal.jsx';
 import ControlledModal  from 'PATH-TO-WHERE-YOU-SAVE-IT/ControlledModal.jsx';
-
+```
 
 and use it by:
 
-<EnclosedModal title="t2" text="hi there"/>
+`<EnclosedModal title="t2" text="hi there"/>`
 
 or
         
+```
 export default class YourApp  extends Component {
   constructor(props) {
     super(props);
@@ -53,9 +51,11 @@ export default class YourApp  extends Component {
       controlledModalOpen : false
     });
   }
+```
+```
 <ControlledModal closeModal={ this.closeModal.bind(this) } isOpen={ this.state.controlledModalOpen } />
 <button onClick={ this.openModal.bind(this) }>Open Controlled Modal</button>
-
+```
 
 
 If your project supports scss you may want to use the original _react-modal.scss from https://github.com/patrickml/react-modal/blob/master/lib/_react-modal.scss  by patrickml 
