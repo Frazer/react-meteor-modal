@@ -11,9 +11,13 @@ All you need to add modals to your project are the 4 files in this core director
 ControlledModal.jsx, Modal.jsx, EnclosedModal.jsx,  and	main.css
 
 and run these in your project folder:
+
 meteor add react-meteor-data
+
 meteor npm install react-addons-pure-render-mixin
+
 meteor npm install react-addons-css-transition-group
+
 meteor npm install --save classnames
 
 
