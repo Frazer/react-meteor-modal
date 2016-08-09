@@ -8,8 +8,9 @@ These files are intended if you are running meteor 1.4.x.x and your project is u
 You can run meteor in the demo folder to see how it works, to try configuring the modals, and to see the ModalPage implementing the Modals.
 
 All you need to add modals to your project are the 4 files in this core directory.
+ControlledModal.jsx, Modal.jsx, EnclosedModal.jsx,  and	main.css
 
-and run:
+and run these in your project folder:
 meteor add react-meteor-data
 meteor npm install react-addons-pure-render-mixin
 meteor npm install react-addons-css-transition-group
