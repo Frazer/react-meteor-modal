@@ -1,10 +1,11 @@
 import React, { Component, PropTypes } from 'react';
-import EnclosedModal  from './EnclosedModal.jsx';
-import ControlledModal  from './ControlledModal.jsx';
 
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
+
+import EnclosedModal  from './EnclosedModal.jsx';
+import ControlledModal  from './ControlledModal.jsx';
 
 
 export default class ModalPage  extends Component {
