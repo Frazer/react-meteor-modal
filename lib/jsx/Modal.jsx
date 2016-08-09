@@ -2,8 +2,16 @@ import React, { Component, PropTypes } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { Meteor } from 'meteor/meteor';
 import classnames from 'classnames';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
+
 
 export default class Modal extends Component {
+  
+  constructor(props) {
+    super(props);  
+    
+    this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+  }
 
   render() {
     
