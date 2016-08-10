@@ -9,8 +9,7 @@ These files are intended if you are running meteor 1.4.x.x and your project is u
 
 You can run meteor in the demo folder to see how it works, to try configuring the modals, and to see the ModalPage implementing the Modals.
 
-All you need to add modals to your project are the 4 files in this core directory.
-ControlledModal.jsx, Modal.jsx, EnclosedModal.jsx,  and	main.css
+All you need to add modals to your project are the 2 files in this core directory.    Modal.jsx,  and	main.css
 
 and run these in your project folder:
 
@@ -21,15 +20,19 @@ meteor npm install react-addons-css-transition-group
 meteor npm install --save classnames
 ```
 
+You may also want to use ConfirmModal.jsx, EnclosedModal.jsx,ControlledModal.jsx.  Confirm Modal is useful, the other 2 are simply demos you might like to configure for yourself.
+
 On the page that you wish to use the modals include:
 
 ```
+import ConfirmModal  from 'PATH-TO-WHERE-YOU-SAVE-IT/ConfirmModal.jsx';
 import EnclosedModal  from 'PATH-TO-WHERE-YOU-SAVE-IT/EnclosedModal.jsx';
 import ControlledModal  from 'PATH-TO-WHERE-YOU-SAVE-IT/ControlledModal.jsx';
 ```
 
 and use it by:
 
+`<ConfirmModal openButtonTitleTag="delete"  openButtonClassName="delete" openButtonText="&times;" title="It's over!" text="This will delete this item" modalConfirmButtonText="Gone for good?" onConfirmFunction={this.deleteThisItem.bind(this)}/>`
 `<EnclosedModal title="t2" text="hi there"/>`
 
 or
