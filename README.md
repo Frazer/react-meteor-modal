@@ -33,6 +33,7 @@ import ControlledModal  from 'PATH-TO-WHERE-YOU-SAVE-IT/ControlledModal.jsx';
 and use it by:
 
 `<ConfirmModal openButtonTitleTag="delete"  openButtonClassName="delete" openButtonText="&times;" title="It's over!" text="This will delete this item" modalConfirmButtonText="Gone for good?" onConfirmFunction={this.deleteThisItem.bind(this)}/>`
+
 `<EnclosedModal title="t2" text="hi there"/>`
 
 or
