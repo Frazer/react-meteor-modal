@@ -29,7 +29,7 @@ export default class EnclosedModal extends Component {
   render () {
       return (
         <div>
-          <button onClick={ this.openModal }>Open Enclosed Modal</button>
+          <button className={ this.props.openButtonClassName} onClick={ this.openModal }>{ this.props.openButtonText ? this.props.openButtonText:"Open Enclosed Modal"}</button>
           
           <Modal
             isOpen={ this.state.isOpen }
