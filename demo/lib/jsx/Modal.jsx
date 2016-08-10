@@ -13,6 +13,14 @@ export default class Modal extends Component {
     this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
   }
 
+  handleOverlayClick() {
+
+    if (this.props.shouldCloseOnOverlayClick) {
+        this.props.close();
+    }
+  }
+
+
   render() {
     
 
@@ -37,7 +45,7 @@ export default class Modal extends Component {
               </div>
             </div>
           </div>
-          <div className="md-overlay" onClick={ this.props.close } />
+          <div className="md-overlay" onClick={ this.handleOverlayClick.bind(this) } />
         </ReactCSSTransitionGroup>
       );
     }else{
@@ -61,4 +69,5 @@ Modal.propTypes = {
   options: PropTypes.object,
   id: PropTypes.string,
   theme: PropTypes.string,
+  shouldCloseOnOverlayClick:  PropTypes.bool,
 };
