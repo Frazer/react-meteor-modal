@@ -6,6 +6,7 @@ import { createContainer } from 'meteor/react-meteor-data';
 
 import EnclosedModal  from './EnclosedModal.jsx';
 import ControlledModal  from './ControlledModal.jsx';
+import ConfirmModal  from './ConfirmModal.jsx';
 
 
 export default class ModalPage  extends Component {
@@ -32,6 +33,8 @@ export default class ModalPage  extends Component {
   render () {
     return (
       <div>
+
+        <ConfirmModal openButtonTitleTag="delete"  openButtonClassName="delete" openButtonText="&times;" title="It's over!" text="This will delete this card from your deck" modalConfirmButtonText="Gone for good?" onConfirmFunction={this.yourDeleteFunction.bind(this)}/>
 
         <EnclosedModal title="t1" text="hi"/>
 
