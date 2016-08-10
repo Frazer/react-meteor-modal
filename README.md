@@ -1,5 +1,5 @@
 # react-modal
-a react modal dialog for meteor 1.4 - ported from https://github.com/patrickml/react-modal   which I think is based on https://reactcommunity.org/react-modal/
+a react modal dialog for meteor 1.4 - ported from https://github.com/patrickml/react-modal   which I think is based on { https://reactcommunity.org/react-modal/ , https://github.com/reactjs/react-modal , https://www.npmjs.com/package/react-modal }
 
 
 You can read his more extensive config instructions after following the setup instructions below
