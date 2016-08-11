@@ -26,19 +26,35 @@ On the page that you wish to use the modals include:
 
 ```
 import ConfirmModal  from 'PATH-TO-WHERE-YOU-SAVE-IT/ConfirmModal.jsx';
-import EnclosedModal  from 'PATH-TO-WHERE-YOU-SAVE-IT/EnclosedModal.jsx';
-import ControlledModal  from 'PATH-TO-WHERE-YOU-SAVE-IT/ControlledModal.jsx';
+
+...
+
+      //  in your render function
+
+        <ConfirmModal openButtonTitleTag="delete"  openButtonClassName="delete" openButtonText="&times;" title="It's over!" text="This will delete this card from your deck" modalConfirmButtonText="Gone for good?" onConfirmFunction={this.yourDeleteFunction.bind(this)}/>
+
 ```
 
-and use it by:
+or
 
-`<ConfirmModal openButtonTitleTag="delete"  openButtonClassName="delete" openButtonText="&times;" title="It's over!" text="This will delete this item" modalConfirmButtonText="Gone for good?" onConfirmFunction={this.deleteThisItem.bind(this)}/>`
+```
+import EnclosedModal  from 'PATH-TO-WHERE-YOU-SAVE-IT/EnclosedModal.jsx';
 
-`<EnclosedModal title="t2" text="hi there"/>`
+...
+
+      //  in your render function
+      <EnclosedModal title="t2" text="hi there"/>
+
+```
 
 or
         
 ```
+
+import ControlledModal  from 'PATH-TO-WHERE-YOU-SAVE-IT/ControlledModal.jsx';
+
+...
+
 export default class YourApp  extends Component {
   constructor(props) {
     super(props);
@@ -59,11 +75,14 @@ export default class YourApp  extends Component {
       controlledModalOpen : false
     });
   }
-```
-and in your render
-```
-<ControlledModal closeModal={ this.closeModal.bind(this) } isOpen={ this.state.controlledModalOpen } />
-<button onClick={ this.openModal.bind(this) }>Open Controlled Modal</button>
+
+  ...
+
+    and in your render function
+
+    <ControlledModal closeModal={ this.closeModal.bind(this) } isOpen={ this.state.controlledModalOpen } />
+    <button onClick={ this.openModal.bind(this) }>Open Controlled Modal</button>
+    
 ```
 
 
