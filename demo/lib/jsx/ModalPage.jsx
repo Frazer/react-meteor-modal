@@ -34,11 +34,11 @@ export default class ModalPage  extends Component {
     return (
       <div>
 
-        <ConfirmModal openButtonTitleTag="delete"  openButtonClassName="delete" openButtonText="&times;" title="It's over!" text="This will delete this card from your deck" modalConfirmButtonText="Gone for good?" onConfirmFunction={this.yourDeleteFunction.bind(this)}/>
+        <ConfirmModal openButtonTitleTag="delete"  openButtonClassName="delete" openButtonText="&times;" title="It's over!" text="This will delete this card from your deck" modalConfirmButtonText="Gone for good?" onConfirmFunction={this.closeModal.bind(this)}/>
 
-        <EnclosedModal title="t1" text="hi"/>
+        <EnclosedModal title="1" shouldCloseOnOverlayClick="true" text="hi, this should close if you click outside the box"/ >
 
-        <EnclosedModal title="t2" text="hi there"/>
+        <EnclosedModal title="2" text="hi there"/>
         
         <ControlledModal closeModal={ this.closeModal.bind(this) } isOpen={ this.state.controlledModalOpen } />
         <button onClick={ this.openModal.bind(this) }>Open Controlled Modal</button>

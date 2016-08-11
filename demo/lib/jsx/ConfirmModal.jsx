@@ -60,8 +60,7 @@ ConfirmModal.propTypes = {
   children:             PropTypes.any,
   options:              PropTypes.object,
   id:                   PropTypes.string,
-  shouldCloseOnOverlayClick:  PropTypes.bool,
+  shouldCloseOnOverlayClick:  PropTypes.bool,   //assuming no as an answer is required
 };
 
 //onAfterOpen: React.PropTypes.func,
-//shouldCloseOnOverlayClick: React.PropTypes.bool
