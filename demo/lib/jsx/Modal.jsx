@@ -11,6 +11,11 @@ export default class Modal extends Component {
     super(props);  
     
     this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+
+    this.state = {
+      hasEscapeListener: false,
+    };
+    this.listenForEsc = this._listenForEsc.bind(this);
   }
 
   handleOverlayClick() {
@@ -18,6 +23,37 @@ export default class Modal extends Component {
     if (this.props.shouldCloseOnOverlayClick) {
         this.props.close();
     }
+  }
+
+
+  _listenForEsc(event) {
+        if (this.props.isOpen && !this.props.shouldNotCloseOnEsc &&
+                (event.key === "Escape" ||
+                 event.keyCode === 27)) {
+            this.props.close();
+          
+        }
+        //console.log("keyListener");
+  }
+
+  componentDidUpdate() {                     // I was not able to get     componentDidMount,componentWillUnmount to work - if you manage, please let me know how:  frazer@frazerk.net
+    if(!this.props.shouldNotCloseOnEsc){
+      if(this.props.isOpen){
+        if(!this.state.hasEscapeListener){
+          window.addEventListener("keydown", this.listenForEsc, true);
+          this.setState({
+            hasEscapeListener: true,
+          });
+          //console.log("keyListener attempted add");
+        }
+      }else if(this.state.hasEscapeListener){
+        window.removeEventListener("keydown", this.listenForEsc, true);
+        this.setState({
+          hasEscapeListener: false,
+        });
+           //console.log("keyListener attempted remove");
+      }
+    } 
   }
 
 
@@ -70,4 +106,6 @@ Modal.propTypes = {
   id: PropTypes.string,
   theme: PropTypes.string,
   shouldCloseOnOverlayClick:  PropTypes.bool,
+  shouldNotCloseOnEsc: PropTypes.bool,
+
 };
