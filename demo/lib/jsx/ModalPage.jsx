@@ -16,14 +16,20 @@ export default class ModalPage  extends Component {
 
    this.state = {
 
+      ////  for  AlertModal
+
       showAlertModal: false,
       alertModalText: 'Alert',
 
+      ////  for  ControlledModal
       controlledModalOpen: false,
 
     };
   }
 
+
+
+///////////// You might want to use these functions
 
   alertModal(text, returnModalFocusTo){
     
@@ -48,6 +54,17 @@ export default class ModalPage  extends Component {
   }
 
 
+//////////
+  //passed to the confirm modal
+  exampleFunction(){
+    this.alertModal("this is using the AlertModal. Notice the focus is automatically on the ok button,  and after this closes, you can control where the focus should go by using a ref tag", this.refs.controlFocus);
+  }
+
+
+
+
+
+////////////  this is to control the ControlModal.  The functions above to control the alert modal are based on these
 
   openControlledModal () {
     this.setState({
@@ -61,24 +78,31 @@ export default class ModalPage  extends Component {
     });
   }
 
+
+///////////////////////
+
+
   render () {
     return (
       <div>
+      Here is an example of a confirm modal that triggers an Alert Modal.
 
-        <ConfirmModal openButtonTitleTag="delete"  openButtonClassName="delete" 
-                      openButtonText="&times;" title="It's over!" 
-                      text="This will delete this card from your deck" 
-                      modalConfirmButtonText="Gone for good?" 
-                      onConfirmFunction={this.alertModal("That meme already exists", this.refs.textInput).bind(this)}   // this should be the function you want triggered
+        <ConfirmModal openButtonTitleTag="confirm"  openButtonClassName="confirm" 
+                      openButtonText="Example of Confirm Modal" title="It's over!" 
+                      text="This will show an AlertModel if you click confirm" 
+                      modalConfirmButtonText="Are you sure?" 
+                      onConfirmFunction={this.exampleFunction.bind(this)}   // this should be the function you want triggered - ie: this.functionBeingChecked.bind(this)
                       />
 
         <AlertModal isOpen={this.state.showAlertModal} close={ this.closeAlertModal.bind(this)}
             alertModalText={this.state.alertModalText}
           />
+
+        The examples below are simpler examples to show the basics of Modal
      
 
         <EnclosedModal title="Enclosed" 
-            shouldCloseOnOverlayClick="true" 
+            shouldCloseOnOverlayClick={true}
             text="hi, this should close if you click outside the box"/ >
 
         <EnclosedModal title="Enclosed 2" text="hi there"/>
