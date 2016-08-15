@@ -35,7 +35,7 @@ export default class ConfirmModal extends Component {
             isOpen={ this.state.isOpen }
             close={ this.closeModal }
             title={ this.props.title}>
-            <p>{ this.props.text}</p>
+            <div>{ this.props.text}</div>
             <button onClick={ this.closeModal }>{ this.props.modalCancelButtonText ? this.props.modalCancelButtonText:"Cancel"}</button>
             <button onClick={()=>{ this.props.onConfirmFunction(); this.closeModal() }}>{ this.props.modalConfirmButtonText ? this.props.modalConfirmButtonText:"Confirm"}</button>
           </Modal>
@@ -52,7 +52,10 @@ ConfirmModal.propTypes = {
   openButtonClassName:  PropTypes.string,
   openButtonText:       PropTypes.string,
   title:                PropTypes.string,
-  text:                 PropTypes.string,
+  text:                 PropTypes.oneOfType([
+                            React.PropTypes.object,
+                            React.PropTypes.string
+                          ]),
   modalConfirmButtonText: PropTypes.string,
   modalCancelButtonText: PropTypes.string,
   theme:                PropTypes.string,
@@ -60,7 +63,8 @@ ConfirmModal.propTypes = {
   children:             PropTypes.any,
   options:              PropTypes.object,
   id:                   PropTypes.string,
-  shouldCloseOnOverlayClick:  PropTypes.bool,   //assuming no as an answer is required
+  shouldCloseOnOverlayClick:  PropTypes.bool,
 };
 
 //onAfterOpen: React.PropTypes.func,
+//shouldCloseOnOverlayClick: React.PropTypes.bool
