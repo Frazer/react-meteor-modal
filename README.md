@@ -7,18 +7,19 @@ ported from https://github.com/patrickml/react-modal   which I think is based on
 These files are intended if you are running meteor 1.4.x.x and your project is using REACT, as setup in https://www.meteor.com/tutorials/react/creating-an-app
 
 
-You can run meteor in the demo folder to see how it works, to try configuring the modals, and to see the ModalPage implementing the Modals.
-
-All you need to add modals to your project are the 2 files in this core directory.    Modal.jsx,  and	main.css
-
-and run these in your project folder:
+To try the demo, run this in your demo folder:
 
 ```
-meteor add react-meteor-data
-meteor npm install react-addons-pure-render-mixin
-meteor npm install react-addons-css-transition-group
-meteor npm install --save classnames
+meteor npm install --save react react-addons-pure-render-mixin react-dom classnames react-addons-css-transition-group
 ```
+
+You can run 'meteor' in the demo folder to see how it works, to try configuring the modals, and to see the ModalPage implementing the Modals.
+
+
+
+All you need to add modals to your project are the 2 files in this core directory.    Modal.jsx,  and main.css
+
+
 
 You may also want to use ConfirmModal.jsx, or  AlertModal.jsx.  
 
