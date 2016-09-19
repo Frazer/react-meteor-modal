@@ -8,13 +8,12 @@ import { render } from 'react-dom';
 
  
 
-import ModalPage from '../lib/jsx/ModalPage.jsx';
-
+import App from '../lib/jsx/App.jsx';
  
 
 Meteor.startup(() => {
 
-  render(<ModalPage />, document.getElementById('render-target'));
+  render(<App />, document.getElementById('app'));
 
 });
 

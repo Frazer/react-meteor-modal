@@ -5,7 +5,7 @@ import { Meteor } from 'meteor/meteor';
 import classnames from 'classnames';
 import Modal  from './Modal.jsx';
 
-export default class AlertModal extends Component {
+export default class ControlledAlertModal extends Component {
 
   componentDidUpdate(x,y){
     if (this.props.isOpen){
@@ -21,11 +21,12 @@ export default class AlertModal extends Component {
           
           <Modal
             isOpen={ this.props.isOpen}
-            shouldCloseOnOverlayClick={true} 
+            shouldCloseOnOverlayClick={this.props.shouldClose} 
             close={ this.props.close}
+            title={this.props.title}
             >
-            <div>{ this.props.alertModalText}</div>
-            <button onClick={ this.props.close.bind(this) } ref="closeAlert">Ok</button>
+            <div>{ this.props.children}</div>
+            <button onClick={ this.props.close.bind(this) } ref="closeAlert">{this.props.closeButtonText || 'Ok'}</button>
           </Modal>
         
         </div>
@@ -34,7 +35,8 @@ export default class AlertModal extends Component {
 };
 
 
-AlertModal.propTypes = {
+ControlledAlertModal.propTypes = {
+  isOpen: PropTypes.bool,
   title:                PropTypes.string,
   text:                 PropTypes.oneOfType([
                             React.PropTypes.object,
@@ -43,11 +45,13 @@ AlertModal.propTypes = {
   ButtonText: PropTypes.string,
   theme:                PropTypes.string,
   closeIcon:            PropTypes.bool,
+  close: PropTypes.func,
   children:             PropTypes.any,
   options:              PropTypes.object,
   id:                   PropTypes.string,
   shouldCloseOnOverlayClick:  PropTypes.bool,
 };
 
+
+
 //onAfterOpen: React.PropTypes.func,
-//shouldCloseOnOverlayClick: React.PropTypes.bool
