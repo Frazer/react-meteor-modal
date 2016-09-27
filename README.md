@@ -21,7 +21,7 @@ All you need to add modals to your project are the 2 files in this core director
 
 
 
-You may also want to use EnclosedModal.jsx, ControlledAlertModal.jsx or ConfirmModal.jsx . 
+You may also want to use EnclosedModal.jsx, ControlledAlertModal.jsx or ConfirmModal.jsx, or ControlledConfrimModal.jsx . 
 
 
 You can see each of these running in the demo, and to see how to configure some modal, see SomeModalDemo.jsx 

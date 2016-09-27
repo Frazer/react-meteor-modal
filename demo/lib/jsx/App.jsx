@@ -9,9 +9,10 @@ import Nav  from './Nav.jsx';
 import EnclosedDemo  from './EnclosedDemo.jsx';
 import ControlledAlertDemo  from './ControlledAlertDemo.jsx';
 import ConfirmDemo  from './ConfirmDemo.jsx';
+import ControlledConfirmDemo  from './ControlledConfirmDemo.jsx';
 
 
-const DemoPages = { EnclosedDemo , ControlledAlertDemo, ConfirmDemo };
+const DemoPages = { EnclosedDemo , ControlledAlertDemo, ConfirmDemo , ControlledConfirmDemo};
 
 export default class App  extends Component {
   	constructor(props) {
