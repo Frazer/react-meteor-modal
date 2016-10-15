@@ -6,8 +6,9 @@ import { createContainer } from 'meteor/react-meteor-data';
 
 import ControlledConfirmModal  from './ControlledConfirmModal.jsx';
 
-import ListItem, {JustConfirm, ConfirmFunctionAndUseTickBox} from './ListItem.jsx';
+import ListItem from './ListItem.jsx';
 
+import {JustConfirm, ConfirmFunctionAndUseTickBox} from './ModalTextOptions.jsx';
 
 
 const ConfirmModalTextOptions = { ConfirmFunctionAndUseTickBox, JustConfirm };
@@ -20,7 +21,7 @@ export default class ControlledConfirmDemo  extends Component {
    this.state = {
 
       showConfirmModal: false,
-      confirmModalTextOptions: 'ConfirmFunctionAndUseTickBox', //"Are you sure",  //()=>{return <div>Are you sure?</div>},
+      confirmModalTextOptions: 'ConfirmFunctionAndUseTickBox', //pulled from ModalTextOptions.jsx
       confirmModalConfirmButtonText: 'Confirm',
       modalConfirmedFunction: ()=>{},
 
